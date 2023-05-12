@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./;api";
+
+service APIService {
+    rpc GetUser(GetUserRequest) returns (GetUserResponse){}
+}
+
+message GetUserRequest {
+    int64 id = 1;
+}
+
+message GetUserResponse {
+    int64 id = 1;
+    string Name = 2;
+    int64 Money = 3;
+}
